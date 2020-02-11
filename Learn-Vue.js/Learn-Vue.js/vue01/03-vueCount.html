@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Now: {{counter}}</h1>
+       
+        <!--<button v-on:click="counter++">+</button>
+        <button v-on:click="counter--">-</button>
+        -->
+        <button @click="add">+</button><!-- @ 是 v-on 的语法糖（即简写）-->
+        <button v-on:click="sub">-</button>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+       const app = new Vue({
+           el: '#app',
+           data: {
+               counter: 0
+           },
+           methods: {
+               add: function() {
+                   console.log('+被执行');
+                   this.counter++;
+               },
+               sub: function() {
+                   console.log('-被执行');
+                   this.counter--;
+               }
+           }
+       }) 
+     
+    </script>
+</body>
+</html>

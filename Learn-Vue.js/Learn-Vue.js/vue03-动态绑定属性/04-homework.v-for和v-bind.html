@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .turnRed {
+      color: red;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li  @click="change(index)" :class="{turnRed: currentIndex === index}" v-for="(team, index) in lckTeams">{{team}}</li>
+    </ul>
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        lckTeams: ['T1','GRF','DWG','SB','DRX'],
+        currentIndex: 0
+      },
+      methods: {
+        change: function(index) {
+          this.isRed = !this.isRed;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

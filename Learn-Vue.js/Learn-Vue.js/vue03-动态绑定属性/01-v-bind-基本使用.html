@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <img v-bind:src="imgURL" alt="">
+    <a :href="search">百度一下</a>
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    //语法糖 是 ':'
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello',
+        imgURL: 'https://i0.hdslb.com/bfs/sycp/creative_img/202002/524a294e99b9b1d4f8c020b41990095b.jpg@1100w_484h_1c_100q.jpg',
+        search: 'http://www.baidu.com'
+      }
+    })
+  </script>
+</body>
+</html>
